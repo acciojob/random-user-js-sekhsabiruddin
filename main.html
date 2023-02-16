@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <body onload="loadFunction()">
+    <!-- the entire body must be written by student -->
+    <div class="wholeContainer" id="wholeContainer">
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+      <h1>User Details Dashboard</h1>
 
-</body>
+      <div class="fullName" id="fullName"></div>
 
+      <hr>
+      <div class="image" id="image"></div>
+
+     
+
+      <div id="ans">CLick the following buttons to get relevant data</div>
+
+
+	  <div id="buttons">
+		<button class="button" id="age" onclick="display('age')" >age</button>
+		<button class="button" id="email" onclick="display('email')">email</button>
+		<button class="button" id="phone" onclick="display('phone')">phone</button>
+	  </div>
+
+
+
+    <div class="fetchUser" id="getUser">
+      <button onclick="location.reload()">Fetch User</button>
+    </div>
+	  <div>
+	
+	  </div>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
 </html>
