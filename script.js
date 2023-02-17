@@ -1,46 +1,62 @@
 //your code here
-const url='https://randomuser.me/api/'
 
-let userDetails;
+let data;
+fetch('https://randomuser.me/api/')
+.then((response) => response.json())
+.then((result)=>{
 
-async function loadFunction(){
-  const response=await fetch(url);
-  const data=await response.json();
-  userDetails =data.results[0];
-console.log(userDetails);
-  const imageContainer=document.getElementById('image');
-  const imageElement=document.createElement('img')
-  imageElement.src=userDetails.picture.large
-  imageContainer.append(imageElement)
-  const name=userDetails.name;
-  document.getElementById('fullName').textContent='Name: '+name.title+" "+name.first+" "+name.last
+    data = result.results[0];
+    let user = document.getElementById('user');
 
+    let img = document.createElement('img');
+    img.src = data.picture.large;
+    user.appendChild(img);
 
-// name.title+" "+name.first+" "+name.last
- 
+    let h2 = document.createElement('h2');
+    
+
+    h2.innerHTML = `${data.name.first}  ${data.name.last}`;
+    user.appendChild(h2);
+});
+function getAnother(){
+    fetch('https://randomuser.me/api/')
+    .then((response) => response.json())
+    .then((result)=>{
+    
+        data = result.results[0];
+        let user = document.getElementById('user');
+        user.innerHTML = "";
+
+        let info = document.getElementById('info');
+        info.innerHTML = "";
+    
+        let img = document.createElement('img');
+        img.src = data.picture.large;
+        user.appendChild(img);
+    
+        let h2 = document.createElement('h2');
+        
+    
+        h2.innerHTML = `${data.name.first}  ${data.name.last}`;
+        user.appendChild(h2);
+    });
 }
 
-function display(x){
-  const answer=document.getElementById('ans');
-  if(x==="age"){
-    answer.textContent='Age: '+userDetails.dob.age
-  }
+function Age(){
+    let info = document.getElementById('info');
 
-   if(x==="email"){
-      answer.textContent='Email: '+userDetails.email
-   }
-
-   if(x==="phone"){
-    answer.textContent='Phone: '+userDetails.phone
- }
+    info.innerHTML = `${data.dob.age}`;
 }
 
-async function fetchUser(){
-  document.getElementById("image").remove();
-  console.log("i am in");
- await loadFunction();
+function Email(){
+    let info = document.getElementById('info');
+
+    info.innerHTML = `${data.email}`;
 }
 
+function Phone(){
+    let info = document.getElementById('info');
 
-
+    info.innerHTML = `${data.cell}`;
+}
 

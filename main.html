@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body onload="loadFunction()">
-    <!-- the entire body must be written by student -->
-    <div class="wholeContainer" id="wholeContainer">
+<head>
+	<link rel="stylesheet" href="styles.css">
+</head>
 
-      <h1>User Details Dashboard</h1>
+<body>
+	<div class="main">
 
-      <div class="fullName" id="fullName"></div>
+		<div class="user" id="user">
 
-      <hr>
-      <div class="image" id="image"></div>
+		</div>
+		<div id="additional-info">
+			<h3>Additional Info:</h3>
+			<p id="info"></p>
+		</div>
+		<button data-attr="age" id="age"  onclick="Age()">Age</button>
+		<button data-attr="email" id="email"  onclick="Email()">Email</button>
+		<button data-attr="phone" id="Phone" onclick="Phone()">Phone</button><br>
+		<button id="getUser"  onclick="getAnother()"> Get Another User </button>
+		
+	</div>
 
-     
+	<!-- the entire body must be written by student -->
+    <script type="text/javascript" src="./script.js">
+</script>
 
-      <div id="ans">CLick the following buttons to get relevant data</div>
+</body>
 
-
-	  <div id="buttons">
-		<button class="button" id="age" onclick="display('age')" >age</button>
-		<button class="button" id="email" onclick="display('email')">email</button>
-		<button class="button" id="phone" onclick="display('phone')">phone</button>
-	  </div>
-
-
-
-    <div class="fetchUser" id="getUser">
-      <button onclick="location.reload()">Fetch User</button>
-    </div>
-	  <div>
-	
-	  </div>
-    </div>
-
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
 </html>
